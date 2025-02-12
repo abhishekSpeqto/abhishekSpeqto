@@ -4,18 +4,18 @@ import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout/Layout'
 import { Banner } from './components/Banner/Banner';
 import { Home } from './pages/Home/Home';
-import { AppKitProvider } from './utils/WagmiProvider';
+import { WalletKitProvider } from './utils/wallet/WalletProvider';
 
 export const App = () => {
 
   return (
-    <AppKitProvider>
+    <WalletKitProvider>
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
         </Route>
       </Routes>
-    </AppKitProvider>
+    </WalletKitProvider>
 
   )
 }
