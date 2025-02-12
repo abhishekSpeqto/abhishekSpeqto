@@ -1,0 +1,15 @@
+.header-con {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-con {
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+/*  */
+
