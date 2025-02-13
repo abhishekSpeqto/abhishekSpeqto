@@ -1,0 +1,62 @@
+.buy-token-cont {
+    background: rgb(50, 47, 47);
+    padding: 20px 30px;
+}
+
+.bg-gradient {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: 4px solid transparent;
+    background: linear-gradient(90deg, #1c1c1c, #1c1c1c, #1c1c1c) padding-box, linear-gradient(180deg, #7F3CDD 0%, #1c1c1c 100%) border-box;
+}
+
+.bt-sub-cont {
+    height: 260px;
+    width: 60%;
+    padding: 24px;
+    margin: 40px auto;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btsc-left {
+    color: white;
+    height: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 60px;
+    font-size: 20px;
+}
+
+.btsc-right {
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bt-input {
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 15px;
+    font-size: 17px;
+}
+
+.bt-btn {
+    color: white;
+    padding: 5px 10px;
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 17px;
+    background: linear-gradient(135.53deg, #322BEE 0%, #7F3CDD 22.63%, #C330E8 50.92%, #DD3CBF 77.6%, #EE2B81 100%);
+    box-shadow: 0px 4px 4px 0px #00000040;
+}

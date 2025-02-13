@@ -4,7 +4,7 @@ import { useAppKit, useAppKitAccount } from '@reown/appkit/react'
 import { useBalance } from 'wagmi'
 export const Banner = () => {
     const { open } = useAppKit();
-    const { address, isConnected} = useAppKitAccount()
+    const { address, isConnected } = useAppKitAccount()
     const { data: balanceData } = useBalance({ address })
 
     const progress = 60
