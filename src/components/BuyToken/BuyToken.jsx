@@ -9,12 +9,12 @@ const BuyToken = () => {
     const { data: buyTokenHash, isSuccess: buyTokenSuccess, isError: buyTokenError, writeContract: buyTokenWrite, error: errorMesssageRelease } = useWriteContract();
     const { isConnected } = useAppKitAccount()
     const [chufrTokenAmount, setChufrTokenAmount] = useState(0);
-    const [bnbAmount, setBnbAmount] = useState(0);
+    const [bnbAmount, setBnbAmount] = useState(null);
 
     const handleBuyToken = () => {
         try {
             buyTokenWrite({
-                address: import.meta.env.VITE_PRESALE_CHAUFR_ADDRESS,
+                address: import.meta.env.VITE_CHAUFR_PRESALE_ADDRESS,
                 abi: PRESALE_ABI,
                 functionName: "buyTokenBNB",
                 value: [parseEther(bnbAmount)]
@@ -36,7 +36,7 @@ const BuyToken = () => {
     });
 
     const { data: bnbPricePerToken, isSuccess: bnbPriceFetchSuccess, refetch } = useReadContract({
-        address: import.meta.env.VITE_PRESALE_CHAUFR_ADDRESS,
+        address: import.meta.env.VITE_CHAUFR_PRESALE_ADDRESS,
         abi: PRESALE_ABI,
         functionName: 'getBnbPricePerToken'
     });
