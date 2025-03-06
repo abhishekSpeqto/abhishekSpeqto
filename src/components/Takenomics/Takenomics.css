@@ -1,11 +1,3 @@
-.takenomics-con{
-    background-image: url('../../assets/takenomicsbgImage.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 30px 100px;
-}
-.take-heading{
-    font-size: 48px;
-    color: white;
+.takenomics-cont img {
+    width: 100%;
 }

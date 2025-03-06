@@ -1,0 +1,104 @@
+.roadmap-section {
+    background-image: url(../../assets/globe.png);
+    background-repeat: no-repeat;
+    background-position: left 35% center;
+    background-size: contain;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.rs-head-cont {
+    width: 34%;
+}
+
+.rs-head-cont h2{
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.rs-head-cont img{
+    height: 14px;
+}
+
+.rs-head-cont p {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.rodamap-bar {
+    height: 500px;
+    width: 2px;
+    background: rgb(32, 32, 32);
+    position: relative;
+}
+
+.rodamap-bar>div {
+    height: 30%;
+    width: 2px;
+    background: linear-gradient(90deg, #865FFC 0%, #3E4AF1 100%);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.roadmap-right-cont {
+    display: flex;
+}
+
+.rrc-left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rrc-right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rrc-left-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.rrc-rs-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 30px;
+}
+
+.rrc-left-box>div:first-child,
+.rrc-rs-box>div:first-child {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rrc-left-box>div:first-child>div:first-child,
+.rrc-rs-box>div:first-child>div:first-child {
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.rrc-left-box>div:first-child {
+    text-align: right;
+}
+
+.rrc-bar-tick {
+    background: #252525;
+    width: 16px;
+    height: 2px;
+}

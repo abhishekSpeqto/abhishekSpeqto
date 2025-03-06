@@ -2,125 +2,150 @@ import React from 'react'
 import './Banner.css'
 import { useAppKit, useAppKitAccount } from '@reown/appkit/react'
 import { useBalance } from 'wagmi'
+import { images } from '../../utils/images/images'
+
 export const Banner = () => {
     const { open } = useAppKit();
     const { address, isConnected } = useAppKitAccount()
     const { data: balanceData } = useBalance({ address })
 
-    const progress = 60
-
-    const Parentdiv = {
-        height: '25px',
-        width: '100%',
-        backgroundColor: 'grey',
-        borderRadius: 40,
-    }
-
-    const Childdiv = {
-        height: '100%',
-        width: `${progress}%`,
-        backgroundColor: 'white',
-        borderRadius: '20px 0px 0px 20px',
-        textAlign: 'center'
-    }
-
-    const progresstext = {
-        padding: 10,
-        color: 'black',
-        fontWeight: 900
-    }
-
-
     return (
-        <div className='banner-main'>
-            <div className='image-div'>
-                {/* <img src={bgImage} alt="" width='100%' height='100%' /> */}
-                <div className='banner-con'>
-                    <div className='banner-text'>
-                        <h2 className="banner-heading">
-                            Redefining Luxury Ride-Hailing with Blockchain Technology
-                        </h2>
-                        <p className='banner-content'>
-                            Experience the future of luxury transportation with Chaufr, where cutting-edge blockchain technology meets premium ride-hailing. Our platform is not only set to deliver unparalleled comfort and convenience but also introduces
-                            <strong>
-                                ChaufrCoin ($CHFR)
-                            </strong>
-                            as the innovative payment solution, empowering seamless, secure, and rewarding transactions. Be part of the revolution in mobility—luxury redefined.
-                        </p>
-
+        <main className='banner-main'>
+            <div className='banner-cont'>
+                <div className='bc-left-sec'>
+                    <div className='bcls-heading'>
+                        <img src={images.markerIcon} alt='marker' />
+                        <span>Redefining luxury ride-hailing with blockchain technology</span>
                     </div>
-                    <div className='banner-form'>
-                        <p>$CHAUFR PRESALE</p>
-                        <div className='timer'>
-                            <ul className='timer-list'>
-                                <li className='timer-list-item'>
-                                    <p>DAYS</p>
-                                    <span>01</span>
-                                </li>
-                                <li className='timer-list-item'>
-                                    <p>HOURS</p>
-                                    <span>23</span>
-                                </li>
-                                <li className='timer-list-item'>
-                                    <p>MINUTES</p>
-                                    <span>23</span>
-                                </li>
-                                <li className='timer-list-item'>
-                                    <p>SECONDS</p>
-                                    <span>03</span>
-                                </li>
-                            </ul>
-                            <span className=''>USDT RAISED: $2,949000</span>
-                            <div className='progress-bar'>
-                                <div style={Parentdiv}>
-                                    <div style={Childdiv}>
-                                        <span style={progresstext}>Until Price Rise</span>
+
+                    <div className='bcls-para'>
+                        Experience the future of luxury transportation with Chaufr, where cutting edge blockchain technology meets premium ride-hailing. Our platform is not only set to deliver unparalleled comfort and convince but also introduces ChaufrCoin ($CHUFR) as the innovative payment solution, empowering seamless, secure, and rewarding transactions for everyday rides. Be part of the revolution in mobility- luxury redefined.
+                    </div>
+
+                    <div className='bcls-btn-cont'>
+                        <button type="button" className='gradient-btn bclsbc-btn1'><img src={images.buttonIcon} alt='icon' />WHITEPAPER</button>
+                        <button type="button" className='bclsbc-btn2'>AUDIT INFORMATION</button>
+                    </div>
+                </div>
+
+                <div className='bc-right-sec'>
+                    <div className='bcrs-box bcrs-left-box'>
+                        <h2>$CHUFR sales progress</h2>
+
+                        <div className='bcrslb-bar-cont'>
+                            <div className='bcrslb-bar-top-cont'>
+                                <div>
+                                    <p>RAISED</p>
+                                    <p>57,230 COIN</p>
+                                </div>
+
+                                <div>
+                                    <p>TOTAL COIN</p>
+                                    <p>300,000,000</p>
+                                </div>
+                            </div>
+
+                            <div className="progress">
+                                <div className="progress-bar progress-bar-success" style={{ width: `${65}%` }}>
+                                    <div className='progress-tick'></div>
+                                </div>
+                            </div>
+
+                            <div className='bcrslb-bar-bottom-cont'>
+                                <div className='bcrslb-bbc-cont'>
+                                    <div className='bcrslb-bbc-hook'></div>
+                                    <div>
+                                        <p>SOFT CAP</p>
+                                        <p>57,000</p>
+                                    </div>
+                                </div>
+
+                                <div className='bcrslb-bbc-cont'>
+                                    <div className='bcrslb-bbc-hook'></div>
+                                    <div>
+                                        <p>HARD CAP</p>
+                                        <p>5,000,000</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='my-value'>
-                            <p>My PURCHASED = 0  <i className="bi bi-info-circle"></i></p>
-                            <p>My STAKEABLE = 0  <i className="bi bi-info-circle"></i></p>
-                        </div>
-                        <div className='divider-line'>
-                            <div className='value'>
-                                <p>1 $CHAUFR = $0.01</p>
-                                <p>Phase 2 price- 1 $CHAUFR = $0.0325</p>
-                            </div>
-                        </div>
-                        <div className='payment-button'>
-                            <div className='buy-buttons'>
-                                <button className='buy-button buy-card'>
-                                    BUY WITH CARD
-                                </button>
-                                {
-                                    !isConnected ?
-                                        <button onClick={() => open()} className='buy-button buy-crypto'>BUY WITH CRYPTO</button> :
-                                        <div className="buy-btn-group" onClick={() => open()}>
-                                            <button className="wallet-balance"> {balanceData?.formatted.slice(0, 5)} {balanceData?.symbol}</button>
-                                            <button className="wallet-address"> {`${address.slice(0, 4)}...${address.slice(-4)}`}</button>
-                                        </div>
-                                }
-                            </div>
-                            <div className='wallet'>
-                                <p>DON'T HAVE A WALLET</p>
-                                <p>Powered by <strong>Web3Payments</strong></p>
-                            </div>
-                            <div className='audit-buttons'>
-                                <button className='audit-btn'>
-                                    AUDIT
-                                </button>
-                                <button className='audit-btn'>
-                                    CMC
-                                </button>
+
+                        <div className='bcrs-timer-cont'>
+                            <div>Phase 1 sale ends in:</div>
+
+                            <div className='bcrs-tc-sub-cont'>
+                                <div className='bcrs-tcsc-number'>
+                                    <div>29</div>
+                                    <div>Days</div>
+                                </div>
+                                <div className='bcrs-tcsc-number'>
+                                    <div>20</div>
+                                    <div>Hours</div>
+                                </div>
+                                <div className='bcrs-tcsc-number'>
+                                    <div>39</div>
+                                    <div>Minutes</div>
+                                </div>
+                                <div className='bcrs-tcsc-number'>
+                                    <div>00</div>
+                                    <div>Seconds</div>
+                                </div>
                             </div>
                         </div>
 
+                        <button type="button" className='gradient-btn bcrs-btn'>
+                            <img src={images.registerButtonIcon} alt="reveal-icon" />
+                            REGISTER & BUY TOKEN
+                        </button>
+                    </div>
+
+                    <div className='bcrs-box bcrs-right-box'>
+                        <h2>Sales Information</h2>
+
+                        <div className='bcrs-rb-container'>
+                            <div className='bcrs-rb-section'>
+                                <div>PUBLIC SALE STARTS</div>
+                                <div>OCTOBER 01, 2025</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>ACCEPTED</div>
+                                <div>BNB, USDT</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>TOKEN SUPPLY</div>
+                                <div>1,000,000,000</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>T. ALLOCATED FOR ICO</div>
+                                <div>300,000,000</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>PHASE 1</div>
+                                <div>APRIL 01, 2025</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>PHASE 2</div>
+                                <div>JULY 01, 2025</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>PHASE 1 VALUE</div>
+                                <div>$0.01 USD</div>
+                            </div>
+
+                            <div className='bcrs-rb-section'>
+                                <div>PHASE 2 VALUE</div>
+                                <div>$0.0315 USD</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>
+        </main>
     )
 }

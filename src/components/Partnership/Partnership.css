@@ -1,0 +1,22 @@
+.partnership-heading {
+    text-align: center;
+    color: #00BBFF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.partnership-image-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #0C0C0C 14.81%, #232323 36.53%, #000000 51.32%, #232323 78.31%);
+    padding: 50px 0px;
+}
+
+.team-cont img {
+    width: 100%;
+    object-fit: cover;
+}

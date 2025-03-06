@@ -1,15 +1,31 @@
-.header-con {
-    padding: 10px;
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    z-index: 111111;
 }
 
-.main-con {
-    background-color: black;
-    color: white;
-    position: relative;
+.navbar-scroll {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
 }
 
-/*  */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+}
 
+.nav-ul {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    color: #ffffff;
+    padding: 20px 0px;
+}
